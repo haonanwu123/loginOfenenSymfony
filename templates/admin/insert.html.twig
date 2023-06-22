@@ -1,0 +1,19 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block text %}
+    <div class="container-sm mt-5">
+        <div class="row text-center">
+            <h1>Toevoegen van een dier</h1>
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_row(form.name) }}
+            </div>
+            <div class="row">
+                {{ form_row(form.description) }}
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

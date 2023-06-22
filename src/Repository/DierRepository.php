@@ -21,7 +21,7 @@ class DierRepository extends ServiceEntityRepository
         parent::__construct($registry, Dier::class);
     }
 
-    public function save(Dier $entity, bool $flush = false): void
+    public function save(Dier $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class DierRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Dier $entity, bool $flush = false): void
+    public function remove(Dier $entity, bool $flush = true): void
     {
         $this->getEntityManager()->remove($entity);
 
