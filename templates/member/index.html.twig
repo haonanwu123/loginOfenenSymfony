@@ -1,0 +1,31 @@
+{% extends 'memberbase.html.twig' %}
+
+{% block title %}Member{% endblock %}
+
+{% block text %}
+    <div class="container-sm mt-5">
+        <div class="row">
+            <h1>Welkom {% if app.user %}{{ app.user.fname }}{% endif %}!</h1>
+            <p>Dit is de member pagina.</p>
+            <h3>De dieren in het Dierenrijk</h3>
+            <table class="table mt-5">
+                <thead>
+                <tr>
+                    <th scope="col">Dier</th>
+                    <th scope="col">beschrijving</th>
+                    <th scope="col">Land naam</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for dier in diers %}
+                <tr>
+                    <td>{{ dier.name }}</td>
+                    <td>{{ dier.description }}</td>
+                    <td>{{ dier.user.part }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
