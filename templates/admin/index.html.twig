@@ -15,6 +15,7 @@
             <tr>
                 <th scope="col">Dier</th>
                 <th scope="col">beschrijving</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -22,9 +23,20 @@
                 <tr>
                     <td>{{ dier.name }}</td>
                     <td>{{ dier.description }}</td>
+                    <td><a href="{{ path('app_delete', {id:dier.id}) }}" type="button" class="btn btn-danger">Verwijderen</a></td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+{#        <a href="{{ path('insert') }}" type="button" class="btn btn-success">Toevoegen</a>#}
     </div>
+    <style>
+        .table th {
+            border-bottom: 1px solid black;
+        }
+
+        /*.table tr td:nth-child(3) {*/
+        /*    border-top: 1px solid black!important;*/
+        /*}*/
+    </style>
 {% endblock %}
